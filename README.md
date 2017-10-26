@@ -5,6 +5,21 @@ These are my dotfiles. There are many dotfiles like it, but these ones are mine.
 ### Mac Setup
 ---
 
+#### iTerm2
+
+Download iTerm2. Go to `Preferences > Keys`. 
+```
+Hotkey : Control+Space
+```
+
+#### Oh-My-Zsh
+
+Download Oh-My-Zsh. Set theme to `avit`. Copy `avit` theme to custom directory:
+```
+cp ~/.oh-my-zsh/themes/avit.zsh-theme ~/.oh-my-zsh/custom
+```
+Comment out `LS-COLORS` section.
+
 #### Spectacle
 
 Download Spectacle
