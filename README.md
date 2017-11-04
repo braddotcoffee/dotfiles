@@ -31,6 +31,14 @@ Top Half    : Shift+Command+Top-Arrow
 Bottom Half : Shift+Command+Bottom-Arrow
 ```
 
+#### Default Screenshot Location
+
+```
+mkdir ~/Pictures/Screenshots
+defaults write com.apple.screencapture location ~/Pictures/Screenshots
+killall SystemUIServer
+```
+
 #### Mechanical Keyboard
 
 For any Mac using 60% mechanical keyboard, complete the steps below
