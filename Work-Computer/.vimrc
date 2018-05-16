@@ -9,6 +9,7 @@ set nocompatible
 set background=dark
 set t_Co=256
 set textwidth=120
+set t_ut=
 
 set linebreak " turn on word wrapping
 
