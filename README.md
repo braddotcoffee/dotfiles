@@ -2,6 +2,30 @@
 
 These are my dotfiles. There are many dotfiles like it, but these ones are mine.
 
+### Personal Computer Setup
+
+Personal computer setup is configured to work with i3 and ZSH. Clone the repo and link your `.vimrc` and `.tmux.conf` with 
+
+```
+$ ln -s Personal-Computer/.vimrc ~/.vimrc
+$ ln -s Personal-Computer/.tmux.conf ~/.tmux.conf
+```
+
+### Work Computer Setup
+
+Personal computer setup is configured to work with PuTTY and bash. Clone the repo and link your `.vimrc` and `.tmux.conf` with 
+
+```
+$ ln -s Work-Computer/.vimrc ~/.vimrc
+$ ln -s Work-Computer/.tmux.conf ~/.tmux.conf
+```
+
+### Vim Plugin Manager Setup
+
+Follow the instructions within [this repo](https://github.com/junegunn/vim-plug) to install `vim-plug`, a lightweight
+plugin manager. Next, open up vim and run `:PlugInstall`. All plugins specified within the `.vimrc` will be downloaded
+and configured
+
 ### Mac Setup
 ---
 
