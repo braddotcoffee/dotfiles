@@ -87,11 +87,17 @@ Plug 'rust-lang/rust.vim'
 Plug 'yalesov/vim-emblem'
 Plug 'tpope/vim-rails'
 Plug 'leafgarland/typescript-vim'
+Plug 'wlangstroth/vim-racket'
+
+" Usability
+Plug 'jpalardy/vim-slime'
+Plug 'kien/rainbow_parentheses.vim'
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Easy Tags
 Plug 'xolox/vim-easytags'
@@ -131,6 +137,21 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 " YCM
 let g:ycm_autoclose_preview_window_after_insertion  = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Syntastic
+let g:syntastic_enable_racket_racket_checker = 1
+
+" Slime
+if exists("TMUX")
+  let g:slime_target = "tmux"
+  let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
+endif
+
+" Usability
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 "-------------------MAPPINGS--------------------
 
