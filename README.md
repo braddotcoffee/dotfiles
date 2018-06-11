@@ -26,6 +26,11 @@ Follow the instructions within [this repo](https://github.com/junegunn/vim-plug)
 plugin manager. Next, open up vim and run `:PlugInstall`. All plugins specified within the `.vimrc` will be downloaded
 and configured
 
+### Vim Plugin Configs
+
+Some plugins (namely YouCompleteMe) support extra configuration files. These optinoal files are contained within the
+`Plugins` subdirectory.
+
 ### Mac Setup
 ---
 
