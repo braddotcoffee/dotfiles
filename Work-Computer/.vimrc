@@ -43,7 +43,7 @@ set backspace=indent,eol,start " allow backspacing over autoindent
 set autoindent " when opening a new line, keep the same indent as the previous line,
 	       " unless there's a filetype specific indentation. i.e. after an
 	       " open curly brace
-	       
+
 set nostartofline " stop cursor from going to start of line when scrolling down
 set ruler " Display cursor position in status line. Better readability
 
@@ -119,7 +119,6 @@ filetype on
 filetype indent on "Sets filetype-specific indents
 filetype plugin on "Sets filetype-specific indents
 
-au FileType c setl sw=4 sts=4 et
 set cinoptions+=t0
 
 " ColorScheme
