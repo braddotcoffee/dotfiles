@@ -76,6 +76,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'godlygeek/tabular'
+Plug 'bronson/vim-trailing-whitespace'
 
 " Integration
 Plug 'vim-syntastic/syntastic'
@@ -106,6 +107,9 @@ Plug 'zcodes/vim-colors-basic'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 
+" ~~ A e s t h e t i c ~~
+Plug 'ryanoasis/vim-devicons'
+
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -114,6 +118,9 @@ call plug#end()
 filetype on
 filetype indent on "Sets filetype-specific indents
 filetype plugin on "Sets filetype-specific indents
+
+au FileType c setl sw=4 sts=4 et
+set cinoptions+=t0
 
 " ColorScheme
 colorscheme gruvbox
@@ -134,6 +141,9 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 let g:ycm_autoclose_preview_window_after_insertion  = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
+
+" Devicons
+set encoding=UTF-8
 
 "-------------------MAPPINGS--------------------
 
