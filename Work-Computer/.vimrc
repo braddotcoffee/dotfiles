@@ -81,6 +81,8 @@ Plug 'bronson/vim-trailing-whitespace'
 " Integration
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive'
+Plug 'shime/vim-livedown'
+Plug 'lervag/vimtex'
 
 " Languages
 Plug 'kchmck/vim-coffee-script'
@@ -89,6 +91,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'yalesov/vim-emblem'
 Plug 'tpope/vim-rails'
 Plug 'leafgarland/typescript-vim'
+Plug 'posva/vim-vue'
+Plug 'pangloss/vim-javascript'
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -140,7 +144,11 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 " YCM
 let g:ycm_autoclose_preview_window_after_insertion  = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_always_populate_location_list = 1
 let g:ycm_confirm_extra_conf = 0
+
+" Markdown Preview
+let g:livedown_port = 5000
 
 " Devicons
 set encoding=UTF-8
@@ -188,7 +196,7 @@ map  t <Plug>(easymotion-tl)
 map <leader>d :YcmCompleter GoToDeclaration<CR>
 map <leader>D :YcmCompleter GoToDefinition<CR>
 
-" Tagss
+" Tags
 nnoremap <leader>t :tag<space>
 nnoremap <leader>tn :tnext<CR>
 nnoremap <leader>tp :tprev<CR>
@@ -202,9 +210,10 @@ nnoremap <leader>F :Files<CR>
 nnoremap <leader>S :sp<CR>:Files<CR>
 nnoremap <leader>V :vs<CR>:Files<CR>
 
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Live Preview
+nnoremap <leader>L :LivedownToggle<CR>
 
-" Line limi
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 set path+=$PWD/**
 
