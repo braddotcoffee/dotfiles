@@ -93,6 +93,8 @@ Plug 'tpope/vim-rails'
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'ruby-formatter/rufo-vim'
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -220,6 +222,7 @@ set path+=$PWD/**
 autocmd FileType ruby compiler ruby
 
 let g:fzf_nvim_statusline = 1
+let g:rufo_auto_formatting = 1
 
 
 " --column: Show column number
