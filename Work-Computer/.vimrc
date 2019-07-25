@@ -71,12 +71,13 @@ call plug#begin('~/.vim/bundle')
 
 
 " Automation
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'godlygeek/tabular'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-sources'
 
 " Integration
 Plug 'vim-syntastic/syntastic'
@@ -145,10 +146,26 @@ let g:closetag_filenames = '*.html.eex, *.html.erb, *.html,*.xhtml,*.phtml'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 
 " YCM
-let g:ycm_autoclose_preview_window_after_insertion  = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_always_populate_location_list = 1
-let g:ycm_confirm_extra_conf = 0
+" let g:ycm_autoclose_preview_window_after_insertion  = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_always_populate_location_list = 1
+" let g:ycm_confirm_extra_conf = 0
+
+" Coc Config
+"
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Markdown Preview
 let g:livedown_port = 5000
