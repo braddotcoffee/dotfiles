@@ -1,10 +1,10 @@
-" Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
 let mapleader=","
 
 "-----------------------------------------------
 
+set hidden
 set nocompatible
 set background=dark
 set t_Co=256
@@ -56,6 +56,8 @@ set t_vb= " don't visual bell either.
 set mouse=a "Enable the mouse
 
 set cmdheight=2 "Sets the command line height to 2 lines
+set updatetime=300 " increase frequency of message update
+set shortmess+=c
 
 set modelines=0 "special comments at the end of the file that allow certain settings to only be for this file
 
@@ -80,7 +82,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-sources'
 
 " Integration
-Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'shime/vim-livedown'
 Plug 'lervag/vimtex'
@@ -100,14 +101,10 @@ Plug 'keith/swift.vim'
 
 " Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
-
-" Easy Tags
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
 
 " Color Schemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -144,12 +141,6 @@ let g:closetag_filenames = '*.html.eex, *.html.erb, *.html,*.xhtml,*.phtml'
 " This will make the list of non closing tags self closing in the specified files.
 "
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-
-" YCM
-" let g:ycm_autoclose_preview_window_after_insertion  = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_always_populate_location_list = 1
-" let g:ycm_confirm_extra_conf = 0
 
 " Coc Config
 "
@@ -195,11 +186,6 @@ augroup myvimrc
 augroup END"
 " Vim Autocompletion Configuration
 
-let g:ycm_global_ycm_extra_conf = '~/.ycm_global_ycm_extra_conf'
-let g:ycm_rust_src_path = '/home/ftlc/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-
-
-
 nnoremap <leader>b :ls<CR>:b<space>
 
 nnoremap <leader>w :w<CR>
@@ -213,14 +199,13 @@ map  F <Plug>(easymotion-Fl)
 map  f <Plug>(easymotion-fl)
 map  T <Plug>(easymotion-Tl)
 map  t <Plug>(easymotion-tl)
-map <leader>d :YcmCompleter GoToDeclaration<CR>
-map <leader>D :YcmCompleter GoToDefinition<CR>
 
-" Tags
-nnoremap <leader>t :tag<space>
-nnoremap <leader>tn :tnext<CR>
-nnoremap <leader>tp :tprev<CR>
-nnoremap <leader>p :pop<CR>
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 
 " Tabular
 vnoremap <leader>t :Tabular<space> /
@@ -241,7 +226,6 @@ autocmd FileType ruby compiler ruby
 
 let g:fzf_nvim_statusline = 1
 let g:rufo_auto_formatting = 1
-
 
 " --column: Show column number
 " --line-number: Show line number
